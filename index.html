@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Execise 3</title>
+    <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td 
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="keyword" id="inputKeyword">
+    <button id="btnFilter">Filter By Name</button>
+    <button id="btnReset">Reset</button>
+    <p id="showData"></p>
+</body>
+<script>
+    
+</script>
+
+<script src="table.js"></script>
+<script>
+    createTable();
+
+    let key;
+
+    document.getElementById('btnFilter').onclick = function(){
+        key = document.getElementById('inputKeyword').value;
+        createTable(key);
+    }
+
+    document.getElementById('btnRset').onclick = function(){
+        document.getElementById('inputKeyword').value = '';
+        createTable();
+    }
+</script>
+</html>
