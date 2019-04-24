@@ -264,8 +264,10 @@ function createTable(txtKeyword = "") {
 
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = tableData[i][col[j]];
-            // console.log(tableData[i][col[j]]);
+            var tabVal = tableData[i][col[j]];
+
+            tabCell.innerHTML = tabVal;
+            console.log(tableData[i][col[j]]);
         }
     }
 

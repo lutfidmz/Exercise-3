@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <meta charset="UTF-8">
     <title>Execise 3</title>
-    <!-- <style>
-        th, td, p, input {
-            font:14px Verdana;
+    <style>
+        td{
+            overflow: auto;
+            white-space: nowrap;
         }
-        table, th, td 
-        {
-            border: solid 1px #DDD;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
-        }
-        th {
-            font-weight:bold;
-        }
-    </style> -->
+    </style>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -43,20 +35,15 @@
                             <div class="card-header">
                                 <h4>Swapi Table</h4>
                                 <div class="card-header-form">
-                                    <!-- <form> -->
                                     <div class="input-group">
-                                        <input type="text" id="inputKeyword" class="form-control" placeholder="Search">
+                                        <input type="text" id="inputKeyword" class="form-control" placeholder="Search By Name">
                                         <div class="input-group-btn">
                                         <button class="btn btn-primary" id="btnFilter"><i class="fas fa-search"></i></button>
                                         </div>
                                     </div>
-                                    <!-- </form> -->
                                 </div>
                             </div>
                             <div class="card-body">
-                                <!-- <input type="text" name="keyword" ">
-                                <button id="btnFilter">Filter By Name</button>
-                                <button >Reset</button> -->
                                 <div id="showData" class="overflow-auto"></div>
                             </div>
                         </div>
@@ -79,15 +66,14 @@
 
     let key;
 
-    document.getElementById('btnFilter').onclick = function(){
-        key = document.getElementById('inputKeyword').value;
+    btnFilter.onclick = function(){
+        inputKeyword.value;
         createTable(key);
     }
 
-    document.getElementById('btnReset').onclick = function(){
-        // alert('klik');
-        document.getElementById('inputKeyword').value = '';
-        createTable();
-    }
+    inputKeyword.oninput = function() {
+        createTable(inputKeyword.value);
+    };
+
 </script>
 </html>
