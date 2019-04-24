@@ -223,26 +223,29 @@ function createTable(txtKeyword = "") {
 
     // console.log(txtKeyword);
 
+    // FILTERING
     if (txtKeyword != ""){
-        var myBooks=data.filter(function(item){
+        var tableData=data.filter(function(item){
             return item.name.toLowerCase().indexOf(txtKeyword.toLowerCase()) > -1;         
         });
     } else{
-        var myBooks = data;
+        var tableData = data;
     }
 
     // EXTRACT VALUE FOR HTML HEADER. 
     var col = [];
-    for (var i = 0; i < myBooks.length; i++) {
-        for (var key in myBooks[i]) {
+    for (var i = 0; i < tableData.length; i++) {
+        for (var key in tableData[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
+                // console.log(key);
             }
         }
     }
 
     // CREATE DYNAMIC TABLE.
     var table = document.createElement("table");
+    table.setAttribute('class','table table-hover table-bordered table-striped')
 
     // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
 
@@ -255,17 +258,18 @@ function createTable(txtKeyword = "") {
     }
 
     // ADD JSON DATA TO THE TABLE AS ROWS.
-    for (var i = 0; i < myBooks.length; i++) {
+    for (var i = 0; i < tableData.length; i++) {
 
         tr = table.insertRow(-1);
 
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = myBooks[i][col[j]];
+            tabCell.innerHTML = tableData[i][col[j]];
+            // console.log(tableData[i][col[j]]);
         }
     }
 
-    // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+    // ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
     var divContainer = document.getElementById("showData");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Execise 3</title>
-    <style>
+    <!-- <style>
         th, td, p, input {
             font:14px Verdana;
         }
@@ -16,13 +16,58 @@
         th {
             font-weight:bold;
         }
-    </style>
+    </style> -->
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- CSS Libraries -->
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
-    <input type="text" name="keyword" id="inputKeyword">
-    <button id="btnFilter">Filter By Name</button>
-    <button id="btnReset">Reset</button>
-    <p id="showData"></p>
+    <div id="app">
+        <div class="main-wrapper">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header">
+                    <h1>Exercise 3 - Looping Table From JSON</h1>
+                    </div>
+                    
+                    <div class="section-body">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Swapi Table</h4>
+                                <div class="card-header-form">
+                                    <!-- <form> -->
+                                    <div class="input-group">
+                                        <input type="text" id="inputKeyword" class="form-control" placeholder="Search">
+                                        <div class="input-group-btn">
+                                        <button class="btn btn-primary" id="btnFilter"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- </form> -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- <input type="text" name="keyword" ">
+                                <button id="btnFilter">Filter By Name</button>
+                                <button >Reset</button> -->
+                                <div id="showData" class="overflow-auto"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+
 </body>
 <script>
     
